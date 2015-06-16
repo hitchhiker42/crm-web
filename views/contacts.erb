@@ -1,2 +1,10 @@
+<h1>All Contacts</h1>
+
+<ul>
+<% @contacts.each do |contact| %>
+  <li><%= contact.first_name %> <%= contact.last_name %></li>
+<% end %>
+</ul>
+
 <p> Please press <a href="/contacts/new">here</a> to add a new contact</p>
 <!-- say /contacts/new instead of just /new as a conention thing not a functional thing -->
