@@ -1,9 +1,8 @@
 class Contact
-	attr_accessor :first_name, :last_name, :email, :notes
-	attr_reader :id
+	attr_accessor :id, :first_name, :last_name, :email, :notes
+	
 
-	def initialize(id, first_name, last_name, email, notes)
-		@id = id
+	def initialize(first_name, last_name, email, notes)
 		@first_name = first_name.capitalize
 		@last_name = last_name.capitalize
 		@email = email
@@ -11,6 +10,7 @@ class Contact
 	end
 
 	def to_s
-		"#{id}: #{first_name} #{last_name} <#{email}> -- Notes: #{notes}"
+		# "#{id}:
+		"#{first_name} #{last_name} <#{email}> -- Notes: #{notes}"
 	end
 end
