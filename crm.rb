@@ -4,6 +4,9 @@ require_relative 'rolodex'
 require 'sinatra'
 
 $rolodex = Rolodex.new #global variable allows the server not to forget between requests
+$rolodex.add_contact(Contact.new("Yehuda", "Katz", "yehuda@example.com", "Developer"))
+$rolodex.add_contact(Contact.new("Mark", "Zuckerberg", "mark@facebook.com", "CEO"))
+$rolodex.add_contact(Contact.new("Sergey", "Brin", "sergey@google.com", "Co-Founder"))
 
 get '/' do
 	@crm_app_name = "My CRM" # @ symbol has nothing to do with OOP. 
@@ -22,6 +25,11 @@ end
 
 get '/contacts/new' do
 	erb :new_contact
+end
+
+get '/contacts/:id' do
+	@contact = $rolodex.find(params[:id].to_i)
+	erb :show_contact
 end
 
 post "/contacts" do 
