@@ -4,9 +4,7 @@
 <% $rolodex.contacts.each do |contact| %>
   <li><a href = "/contacts/<%= contact.id %>"><%= contact.id %></a> <%= contact.first_name %> <%= contact.last_name %></li>
 <% end %> 
-<!-- note the equal sign in the contact.id bit in a href coz a href takes in a string so have to input as string -->
-</ul>
 
 
-<p> Please press <a href="/contacts/new">here</a> to add a new contact</p>
+
 <!-- say /contacts/new instead of just /new as a conention thing not a functional thing -->
